@@ -1,6 +1,9 @@
 import CvPic from '../assets/cv.jpg'
+import { useState } from 'react'
+function Content({ option, setOption }) {
 
-function Content({ option }) {
+  const [mouseoverExperience, setExperience] = useState(false)
+  const [secondaryExperience, setSecondaryExperience] = useState(false)
 
   let options = [
     {
@@ -8,14 +11,14 @@ function Content({ option }) {
         <h5 className=" naugthy-children">
           Hello, World.
         </h5>
-        <h1 className="naugthy-children">I'm Juan Dela Cruz.</h1>
+        <h1 className="naugthy-children">I am Juan Dela Cruz.</h1>
 
         <p className="intro-position">
           <span>Front-end Developer</span>
           <span>UI/UX Designer</span>
         </p>
 
-        <a className="button stroke smoothscroll" href="#about" title="">More About Me</a>
+        <a className="button stroke smoothscroll" onClick={() => setOption('about')} title="">More About Me</a>
       </div>)
     },
     {
@@ -38,18 +41,18 @@ function Content({ option }) {
     },
     {
       name: 'experience', html: (<div className="col-twelve">
-        <h5 className=" naugthy-children">
-          Main Experience
+        <h5 onMouseOver={() => setExperience(true)} onMouseOut={() => setExperience(false)} className=" naugthy-children">
+          Main Experience {mouseoverExperience ? <i>&uarr;</i> : <i>&darr;</i>}
         </h5>
-        <p className="intro-position">
+        {mouseoverExperience && <p style={{ animation: 'fading 2s forwards' }} className="intro-position">
           Teacher in web dev
-        </p>
-        <h6 >
-          Other Experience
+        </p>}
+        <h6 onMouseOver={() => setSecondaryExperience(true)} onMouseOut={() => setSecondaryExperience(false)}>
+          Other Experience {secondaryExperience ? <i>&uarr;</i> : <i>&darr;</i>}
         </h6>
-        <p className="intro-position">
+        {secondaryExperience && <p style={{ animation: 'fading 2s forwards' }} className="intro-position">
           #Spanish Teacher #Cake Taster #Music Lover
-        </p>
+        </p>}
       </div>)
     },
   ]

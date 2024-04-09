@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Header setOption={setOption} />
-      <Content option={option} />
+      <Content option={option} setOption={setOption} />
       <Footer />
     </>
   )
