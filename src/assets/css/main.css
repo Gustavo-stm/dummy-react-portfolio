@@ -847,16 +847,72 @@ header li a {
 }
 
 .intro-content #resume-pic {
-    width: 20%;
+    width: 40%;
     height: auto;
     cursor: zoom-in;
 }
 
-.intro-content #resume-pic:hover {
-    transform: scale(1.5);
-    z-index: 1000;
-    transition: 0.5s;
+.intro-content #portfolio {
+    color: #cc005f;
+    margin: 0 auto;
+    position: relative;
+    height: fit-content;
+    width: 20%;
+    margin-top: 5%;
+
+    & #resume-pic {
+        width: 100%;
+        height: 100%;
+    }
+
+    &:hover {
+        transform: scale(1.2);
+        z-index: 1000;
+        transition: 1s;
+    }
+
+    & ul {
+        display: none;
+    }
+
+    &:hover ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style-type: none;
+        width: 100%;
+        position: absolute;
+        bottom: -20px;
+        height: 80px;
+        left: 0;
+        cursor: pointer;
+        font-size: 0.8em;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding-left: 0;
+        color: white;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: red;
+        }
+    }
+
+    &:hover li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 5px;
+        width: 100%;
+        cursor: pointer;
+
+        & img {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+        }
+    }
 }
+
 
 .intro-content .button::after {
     display: inline-block;
@@ -895,6 +951,7 @@ header li a {
 .intro-social li a:focus {
     color: #cc005f;
 }
+
 
 /**
   * responsive:

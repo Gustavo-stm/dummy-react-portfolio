@@ -1,4 +1,5 @@
 import CvPic from '../assets/cv.jpg'
+import acrobatIcon from '../assets/acrobat-icon.svg'
 import { useState } from 'react'
 function Content({ option, setOption }) {
 
@@ -11,11 +12,11 @@ function Content({ option, setOption }) {
         <h5 className=" naugthy-children">
           Hello, World.
         </h5>
-        <h1 className="naugthy-children">I am Juan Dela Cruz.</h1>
+        <h1 className="naugthy-children">I am Gustavo Catala.</h1>
 
         <p className="intro-position">
           <span>Front-end Developer</span>
-          <span>UI/UX Designer</span>
+          <span>Web Dev Instructor</span>
         </p>
 
         <a className="button stroke smoothscroll" onClick={() => setOption('about')} title="">More About Me</a>
@@ -35,8 +36,11 @@ function Content({ option, setOption }) {
       </div>)
     },
     {
-      name: 'resume', html: (<div className="col-twelve">
+      name: 'resume', html: (<div id="portfolio" className="col-twelve">
         <img id="resume-pic" onDoubleClick={() => document.exitFullscreen()} onClick={(e) => e.target.requestFullscreen()} src={CvPic} />
+        <ul>
+          <li onClick={() => window.open('/resume.pdf', '_blank')}><span>Load pdf</span><img src={acrobatIcon} /></li>
+        </ul>
       </div>)
     },
     {
@@ -57,6 +61,7 @@ function Content({ option, setOption }) {
     },
     {
       name: 'demo', html: (<div className="col-twelve">
+        <h5 style={{ marginBottom: '10px' }}>JS Fundamentals</h5>
         <iframe width="595" height="350" src="https://www.youtube.com/embed/092gBR3HNJI?controls=0"></iframe>
       </div>)
     },
