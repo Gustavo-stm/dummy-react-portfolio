@@ -23,7 +23,7 @@ function Header({ setOption }) {
               <li>
                 <a className="smoothscroll" href="#contact" title="">Contact</a>
               </li>
-              <li><a href="#" title="">Style Demo</a></li>
+              <li><a href="#" onClick={() => setOption('demo')}>Demo</a></li>
             </ul>
           </nav>
         </div>

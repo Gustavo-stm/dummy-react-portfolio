@@ -55,6 +55,11 @@ function Content({ option, setOption }) {
         </p>}
       </div>)
     },
+    {
+      name: 'demo', html: (<div className="col-twelve">
+        <iframe width="595" height="350" src="https://www.youtube.com/embed/092gBR3HNJI?controls=0"></iframe>
+      </div>)
+    },
   ]
   return (
     <section id="intro">
