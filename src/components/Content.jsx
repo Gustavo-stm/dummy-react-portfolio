@@ -1,6 +1,10 @@
 import CvPic from '../assets/cv.jpg'
 import acrobatIcon from '../assets/acrobat-icon.svg'
 import { useState } from 'react'
+
+import {
+  Input, FormControl, InputLabel, FormHelperText, Stack, Button
+} from "@mui/material";
 function Content({ option, setOption }) {
 
   const [mouseoverExperience, setExperience] = useState(false)
@@ -40,15 +44,19 @@ function Content({ option, setOption }) {
         <img id="resume-pic" onDoubleClick={() => document.exitFullscreen()} onClick={(e) => e.target.requestFullscreen()} src={CvPic} />
         <ul>
           <li onClick={() => window.open('/resume.pdf', '_blank')}><span>Load pdf</span><img src={acrobatIcon} /></li>
+          <li><a style={{ textDecoration: 'none', color: 'white' }} href="/resume.pdf" download="resume.pdf">Download</a></li>
         </ul>
       </div>)
     },
     {
-      name: 'experience', html: (<div className="col-twelve">
+      name: 'experience', html: (<div className="col-twelve" id='experience'>
         <h5 onMouseOver={() => setExperience(true)} onMouseOut={() => setExperience(false)} className=" naugthy-children">
           Main Experience {mouseoverExperience ? <i>&uarr;</i> : <i>&darr;</i>}
         </h5>
-        {mouseoverExperience && <p style={{ animation: 'fading 2s forwards' }} className="intro-position">
+        <p style={{ animation: 'fading 2s forwards' }}>
+          Teacher in web dev
+        </p>
+        {/* {mouseoverExperience && <p style={{ animation: 'fading 2s forwards' }} className="intro-position">
           Teacher in web dev
         </p>}
         <h6 onMouseOver={() => setSecondaryExperience(true)} onMouseOut={() => setSecondaryExperience(false)}>
@@ -56,8 +64,68 @@ function Content({ option, setOption }) {
         </h6>
         {secondaryExperience && <p style={{ animation: 'fading 2s forwards' }} className="intro-position">
           #Spanish Teacher #Cake Taster #Music Lover
-        </p>}
+        </p>} */}
       </div>)
+    },
+    {
+      name: 'contact', html: (<form style={{ borderRadius: '10px', display: 'flex', flexDirection: 'column', alignItems: 'start', justifyContent: 'center', height: '400px', width: '400px', margin: '0 auto', backgroundColor: 'rgb(255, 255, 255)' }}>
+        <Stack spacing={2} direction="row" justifyContent="flex-start" sx={{ marginBottom: 6 }} >
+          <FormControl justifyContent="flex-start">
+            <InputLabel htmlFor="fname" color="info">First Name</InputLabel>
+            <Input
+              autoFocus={true}
+              id="fname"
+              value={'my first name'}
+            // onChange={(e) => setFirstName(e.target.value)}
+            />
+            <FormHelperText color={"error"} id="my-helper-text">
+              Please enter your first name.
+            </FormHelperText>
+          </FormControl>
+
+          <FormControl>
+            <InputLabel htmlFor="lname">Last Name</InputLabel>
+            <Input
+              id="lname"
+              value={'my last name'}
+            // onChange={(e) => setLastName(e.target.value)}
+            />
+            <FormHelperText id="my-helper-text">
+              Please enter your last name.
+            </FormHelperText>
+          </FormControl>
+        </Stack>
+        <Stack spacing={2} direction="row" sx={{ marginBottom: 6 }}>
+          <FormControl>
+            <InputLabel htmlFor="email">Email address</InputLabel>
+            <Input
+              id="email"
+              placeholder={'Email address'}
+              value={'My Email'}
+              aria-describedby="my-helper-text"
+            // onChange={(e) => setEmail(e.target.value)}
+            />
+            <FormHelperText id="my-helper-text">
+              We will never share your email.
+            </FormHelperText>
+          </FormControl>
+          <FormControl>
+            <InputLabel htmlFor="phnNumber">Phone Number</InputLabel>
+            <Input
+              id="phnNumber"
+              value={'Phone number'}
+              aria-describedby="my-helper-text"
+            // onChange={(e) => setPhoneNumber(e.target.value)}
+            />
+            <FormHelperText id="my-helper-text">
+              Please enter your phone number here.
+            </FormHelperText>
+          </FormControl>
+        </Stack>
+        <Button variant="contained" color="success" type="submit">
+          Contact
+        </Button>
+      </form>)
     },
     {
       name: 'demo', html: (<div className="col-twelve">

@@ -913,6 +913,43 @@ header li a {
     }
 }
 
+.intro-content #experience p {
+    display: none;
+}
+
+.intro-content #experience {
+    margin-top: 10px;
+
+    & p {
+        display: none
+    }
+
+    &:hover {
+
+        cursor: pointer;
+
+        & p {
+            display: block;
+            color: white;
+        }
+    }
+}
+
+.MuiStack-root div,
+.MuiStack-root label,
+.MuiStack-root p {
+    color: lightgrey;
+}
+
+.MuiStack-root div,
+.MuiStack-root label {
+    font-size: 15px;
+}
+
+.MuiStack-root input {
+    border-bottom: 1px solid white;
+}
+
 
 .intro-content .button::after {
     display: inline-block;

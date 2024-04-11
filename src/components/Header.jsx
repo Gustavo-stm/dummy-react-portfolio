@@ -21,7 +21,7 @@ function Header({ setOption }) {
                 <a className="smoothscroll" onClick={() => setOption('experience')} title="">Experience</a>
               </li>
               <li>
-                <a className="smoothscroll" href="#contact" title="">Contact</a>
+                <a className="smoothscroll" onClick={() => setOption('contact')} title="">Contact</a>
               </li>
               <li><a href="#" onClick={() => setOption('demo')}>Demo</a></li>
             </ul>
