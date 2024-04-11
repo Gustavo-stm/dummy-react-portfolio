@@ -683,6 +683,7 @@ header li a {
     margin-bottom: 10px;
     height: auto;
     clear: both;
+    padding-left: 0;
 }
 
 .main-navigation>li {
@@ -939,15 +940,27 @@ header li a {
 .MuiStack-root label,
 .MuiStack-root p {
     color: lightgrey;
+    font-family: "poppins-semibold", sans-serif;
 }
 
 .MuiStack-root div,
 .MuiStack-root label {
     font-size: 15px;
+    font-family: "poppins-semibold", sans-serif;
 }
 
 .MuiStack-root input {
     border-bottom: 1px solid white;
+    font-family: "poppins-semibold", sans-serif;
+}
+
+.MuiStack-root p {
+    font-size: 10px;
+}
+
+.MuiStack-root button {
+    background-color: #cc005f;
+    margin-left: 15px !important;
 }
 
 

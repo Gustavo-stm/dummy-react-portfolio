@@ -68,7 +68,7 @@ function Content({ option, setOption }) {
       </div>)
     },
     {
-      name: 'contact', html: (<form onSubmit={() => alert('hello')} style={{ borderRadius: '10px', display: 'flex', flexDirection: 'column', alignItems: 'start', justifyContent: 'center', height: '400px', width: '400px', margin: '0 auto' }}>
+      name: 'contact', html: (<form onSubmit={() => alert('hello')} style={{ borderRadius: '10px', display: 'flex', flexDirection: 'column', alignItems: 'start', justifyContent: 'center', paddingTop: "15%", height: '400px', width: '400px', margin: '0 auto' }}>
         <Stack spacing={2} direction="row" justifyContent="flex-start" sx={{ marginBottom: 6 }} >
           <FormControl justifyContent="flex-start">
             <InputLabel htmlFor="fname" color="info">First Name</InputLabel>
@@ -117,9 +117,11 @@ function Content({ option, setOption }) {
             </FormHelperText>
           </FormControl>
         </Stack>
-        <Button type="submit" variant="contained" color="info" type="submit">
-          Contact
-        </Button>
+        <Stack spacing={2} direction="row" sx={{ marginBottom: 6 }}>
+          <Button type="submit" variant="contained">
+            Contact
+          </Button>
+        </Stack>
       </form>)
     },
     {
