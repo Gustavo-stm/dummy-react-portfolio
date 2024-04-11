@@ -68,14 +68,13 @@ function Content({ option, setOption }) {
       </div>)
     },
     {
-      name: 'contact', html: (<form style={{ borderRadius: '10px', display: 'flex', flexDirection: 'column', alignItems: 'start', justifyContent: 'center', height: '400px', width: '400px', margin: '0 auto', backgroundColor: 'rgb(255, 255, 255)' }}>
+      name: 'contact', html: (<form onSubmit={() => alert('hello')} style={{ borderRadius: '10px', display: 'flex', flexDirection: 'column', alignItems: 'start', justifyContent: 'center', height: '400px', width: '400px', margin: '0 auto' }}>
         <Stack spacing={2} direction="row" justifyContent="flex-start" sx={{ marginBottom: 6 }} >
           <FormControl justifyContent="flex-start">
             <InputLabel htmlFor="fname" color="info">First Name</InputLabel>
             <Input
               autoFocus={true}
               id="fname"
-              value={'my first name'}
             // onChange={(e) => setFirstName(e.target.value)}
             />
             <FormHelperText color={"error"} id="my-helper-text">
@@ -87,7 +86,6 @@ function Content({ option, setOption }) {
             <InputLabel htmlFor="lname">Last Name</InputLabel>
             <Input
               id="lname"
-              value={'my last name'}
             // onChange={(e) => setLastName(e.target.value)}
             />
             <FormHelperText id="my-helper-text">
@@ -100,8 +98,6 @@ function Content({ option, setOption }) {
             <InputLabel htmlFor="email">Email address</InputLabel>
             <Input
               id="email"
-              placeholder={'Email address'}
-              value={'My Email'}
               aria-describedby="my-helper-text"
             // onChange={(e) => setEmail(e.target.value)}
             />
@@ -113,7 +109,6 @@ function Content({ option, setOption }) {
             <InputLabel htmlFor="phnNumber">Phone Number</InputLabel>
             <Input
               id="phnNumber"
-              value={'Phone number'}
               aria-describedby="my-helper-text"
             // onChange={(e) => setPhoneNumber(e.target.value)}
             />
@@ -122,7 +117,7 @@ function Content({ option, setOption }) {
             </FormHelperText>
           </FormControl>
         </Stack>
-        <Button variant="contained" color="success" type="submit">
+        <Button type="submit" variant="contained" color="info" type="submit">
           Contact
         </Button>
       </form>)
