@@ -70,7 +70,7 @@ function Content({ option, setOption }) {
     {
       name: 'contact', html: (<form onSubmit={() => alert('hello')} style={{ borderRadius: '10px', display: 'flex', flexDirection: 'column', alignItems: 'start', justifyContent: 'center', paddingTop: "15%", height: '400px', width: '400px', margin: '0 auto' }}>
         <Stack spacing={2} direction="row" justifyContent="flex-start" sx={{ marginBottom: 6 }} >
-          <FormControl justifyContent="flex-start">
+          <FormControl justifycontent="flex-start">
             <InputLabel htmlFor="fname" color="info">First Name</InputLabel>
             <Input
               autoFocus={true}
@@ -127,7 +127,7 @@ function Content({ option, setOption }) {
     {
       name: 'demo', html: (<div className="col-twelve">
         <h5 style={{ marginBottom: '10px' }}>JS Fundamentals</h5>
-        <iframe width="595" height="350" src="https://www.youtube.com/watch?v=Y5jJB5U3VEI?controls=0"></iframe>
+        <iframe width="595" height="350" src="https://www.youtube.com/embed/092gBR3HNJI?controls=0"></iframe>
       </div>)
     },
   ]
