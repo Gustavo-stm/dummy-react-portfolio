@@ -127,7 +127,7 @@ function Content({ option, setOption }) {
     {
       name: 'demo', html: (<div className="col-twelve">
         <h5 style={{ marginBottom: '10px' }}>JS Fundamentals</h5>
-        <iframe width="595" height="350" src="https://www.youtube.com/embed/092gBR3HNJI?controls=0"></iframe>
+        <iframe width="595" height="350" src="https://www.youtube.com/watch?v=Y5jJB5U3VEI?controls=0"></iframe>
       </div>)
     },
   ]
